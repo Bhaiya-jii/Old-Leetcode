@@ -1,0 +1,16 @@
+class Solution(object):
+    def minElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        length = len(nums)
+        for i in range(length):
+            num = nums[i]
+            sum = 0
+            while num > 0:
+                mod = num % 10
+                num = num // 10
+                sum += mod
+            nums[i] = sum
+        return min(nums)
